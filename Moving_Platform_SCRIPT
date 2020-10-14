@@ -1,0 +1,12 @@
+print("Inside the Elevator")
+
+local brick = script.Parent
+brick.Touched:connect(function(hit)--hit will be the part that touches the brick
+	local h = hit.Parent:FindFirstChildOfClass("Humanoid")--see's if the parent of hit contains a humanoid
+	
+	if h then
+		h:Move(Vector3.new(0, 0.1, 0), true)
+		brick.Position = brick.Position + Vector3.new(0, 0.1, 0) -- Moves a part by this muc
+	end
+
+end)
